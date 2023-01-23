@@ -41,5 +41,15 @@ async function init() {
   loginBtn.disabled = true;
 }
 
+import { getUserFragments } from './api';
+
+async function init() {
+  
+  const user = await getUser();
+  
+  // Do an authenticated request to the fragments API server and log the result
+  getUserFragments(user);
+}
+
 // Wait for the DOM to be ready, then start the app
 addEventListener('DOMContentLoaded', init);
