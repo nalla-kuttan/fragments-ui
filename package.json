@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "description": "Fragments UI testing web app",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx parcel build src/index.html"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,9 @@
     "stream-browserify": "^3.0.0"
   },
   "dependencies": {
-    "aws-amplify": "^5.0.11"
+    "aws-amplify": "^5.0.11",
+    "resolve-url": "^0.2.1",
+    "source-map-resolve": "^0.6.0",
+    "urix": "^0.1.0"
   }
 }

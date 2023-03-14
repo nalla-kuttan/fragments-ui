@@ -1,7 +1,9 @@
 // src/app.js
+//It should use src/auth.js to handle authentication, get the user, and update the UI
 
 import { Auth, getUser } from './auth';
-import { getUserFragments, postUserFragments, getFragmentById } from './api';
+import { getUserFragments, postUserFragments, getFragmentById} from './api';
+
 
 async function init() {
   // Get our UI elements
@@ -10,6 +12,7 @@ async function init() {
   const logoutBtn = document.querySelector('#logout');
   const createBtn = document.querySelector('#create');
   const getByIdBtn = document.querySelector('#get');
+  const selectedType = document.getElementById('fragmentType');
 
   // Wire up event handlers to deal with login and logout.
   loginBtn.onclick = () => {
@@ -25,6 +28,7 @@ async function init() {
 
   // See if we're signed in (i.e., we'll have a `user` object)
   const user = await getUser();
+  
   if (!user) {
     // Disable the Logout button
     logoutBtn.disabled = true;
@@ -33,11 +37,13 @@ async function init() {
 
   // Log the user info for debugging purposes
   console.log({ user });
-
-  createBtn.onclick = () => {
+  
+  createBtn.onclick = async () => {
+    console.log('Create fragment button clicked');
     var input = document.getElementById('fragment').value;
     console.log(input);
-    postUserFragments(user, input);
+    console.log(selectedType.value);
+    await postUserFragments(user, JSON.stringify(input), selectedType.value);
   };
 
   getByIdBtn.onclick = () => {
@@ -56,9 +62,12 @@ async function init() {
   loginBtn.disabled = true;
 
   // Do an authenticated request to the fragments API server and log the result
-    getUserFragments(user);
+  getUserFragments(user);
 }
 
+
+
+ 
 
 // Wait for the DOM to be ready, then start the app
 addEventListener('DOMContentLoaded', init);

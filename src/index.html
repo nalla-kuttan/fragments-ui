@@ -1,7 +1,10 @@
+<!--To start development server npx parcel src/index.html-->
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Fragments UI</title>
+    <meta charset="utf-8"/>
+    <title>Fragments-UI</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/bamboo.css" />
     <script type="module" src="./app.js"></script>
   </head>
@@ -14,18 +17,26 @@
           <section hidden id="user">
             <h2>Hello <span class="username"></span>!</h2>
           </section>
-          <section>
-              <label for="fragment">Fragment Text: </label>
+        
+              <label for="fragment">Fragment Content: </label>
               <input type="text" id="fragment" name="fragment">
-              <button id="create">Create</button>
-          </section>
+              <label for="fragmentType">Choose a Type:</label>
+
+              <select name="fragmentType" id="fragmentType">
+                <option value="text/plain">text/plain</option>
+                <option value="text/plain; charset=utf-8">text/plain; charset=utf-8</option>
+                <option value="text/markdown">text/markdown</option>
+                <option value="text/html">text/html</option>
+                <option value="application/json">application/json</option>
+              </select>
+              <button id="create">Create Fragment</button>
           <br>
           <section>
               <label for="id">Enter Fragment Id: </label>
               <input type="text" id="id" name="id">
               <button id="get">Get</button>
           </section>
-    </div>    
+    </div>   
   </body>
 </html>
 

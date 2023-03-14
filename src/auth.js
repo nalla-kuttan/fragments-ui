@@ -1,5 +1,3 @@
-// src/auth.js
-
 import { Amplify, Auth } from 'aws-amplify';
 
 // Configure our Auth object to use our Cognito User Pool
@@ -50,7 +48,7 @@ async function getUser() {
     const username = currentAuthenticatedUser.username;
 
     // Get the user's Identity Token, which we'll use later with our
-    // microservice. See discussion of various tokens:
+    // microservce. See discussion of various tokens:
     // https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-with-identity-providers.html
     const idToken = currentAuthenticatedUser.signInUserSession.idToken.jwtToken;
     const accessToken = currentAuthenticatedUser.signInUserSession.accessToken.jwtToken;
