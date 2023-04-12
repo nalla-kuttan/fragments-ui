@@ -29,7 +29,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install node dependencies defined in package-lock.json
-RUN npm ci --only=production
+RUN npm ci
 
 ##########################################################################################
 # Stage 1: build the site

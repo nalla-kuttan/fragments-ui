@@ -17,25 +17,74 @@
           <section hidden id="user">
             <h2>Hello <span class="username"></span>!</h2>
           </section>
-        
+
+          <h3>Create a Fragment</h3>
               <label for="fragment">Fragment Content: </label>
               <input type="text" id="fragment" name="fragment">
-              <label for="fragmentType">Choose a Type:</label>
-
+              <p>OR</p>
+              <label for="fragmentimage">Select an image file:</label>
+              <input type="file" id="fragmentimage" name="fragmentimage">
+              <br>
+              <br>
+              <label for="fragmentType">Choose a Supported File Type:</label>
               <select name="fragmentType" id="fragmentType">
                 <option value="text/plain">text/plain</option>
                 <option value="text/plain; charset=utf-8">text/plain; charset=utf-8</option>
                 <option value="text/markdown">text/markdown</option>
                 <option value="text/html">text/html</option>
                 <option value="application/json">application/json</option>
+                <option value="image/jpeg">image/jpeg</option>
+                <option value="image/webp">image/webp</option>
+                <option value="image/png">image/png</option>
+                <option value="image/gif">image/gif</option>
               </select>
+              <br>
+              <br>
               <button id="create">Create Fragment</button>
           <br>
           <section>
-              <label for="id">Enter Fragment Id: </label>
-              <input type="text" id="id" name="id">
+            <br>
+            <br>
+
+          <h3>Modify a Fragment</h3>
+            <label for="modifyID">Enter Fragment Id: </label>
+            <input type="text" id="modifyID" name="modifyID">
+
+            <label for="modifiedFragment">Fragment Content: </label>
+              <input type="text" id="modifiedFragment" name="modifiedFragment">
+              <p>OR</p>
+              <label for="fragmentimage2">Select an image file:</label>
+              <input type="file" id="fragmentimage2" name="fragmentimage2">
+              <br>
+              <br>
+              <label for="fragmentType2">Choose a Supported File Type:</label>
+              <select name="fragmentType2" id="fragmentType2">
+                <option value="text/plain">text/plain</option>
+                <option value="text/plain; charset=utf-8">text/plain; charset=utf-8</option>
+                <option value="text/markdown">text/markdown</option>
+                <option value="text/html">text/html</option>
+                <option value="application/json">application/json</option>
+                <option value="application/json">image/jpeg</option>
+                <option value="application/json">image/webp</option>
+                <option value="application/json">image/png</option>
+                <option value="application/json">image/gif</option>
+              </select>
+
+            <button id="modify">Modify</button>
+
+            <h3>Get a Fragment</h3>
+              <label for="getID">Enter Fragment Id: </label>
+              <input type="text" id="getID" name="getID">
               <button id="get">Get</button>
           </section>
+
+          <h3>Delete a Fragment</h3>
+          <label for="deleteID">Enter Fragment Id: </label>
+          <input type="text" id="deleteID" name="deleteID">
+          <button id="delete">Delete</button>
+
+          <div id="imagePlaceholder"></div>
+
     </div>   
   </body>
 </html>
