@@ -17,7 +17,7 @@
           <section hidden id="user">
             <h2>Hello <span class="username"></span>!</h2>
           </section>
-
+          <hr>
           <h3>Create a Fragment</h3>
               <label for="fragment">Fragment Content: </label>
               <input type="text" id="fragment" name="fragment">
@@ -44,7 +44,7 @@
           <br>
           <section>
             <br>
-            <br>
+            <hr>
 
           <h3>Modify a Fragment</h3>
             <label for="modifyID">Enter Fragment Id: </label>
@@ -69,22 +69,38 @@
                 <option value="application/json">image/png</option>
                 <option value="application/json">image/gif</option>
               </select>
-
+              <br><br>
             <button id="modify">Modify</button>
-
+            <br><br>
+            <hr>
             <h3>Get a Fragment</h3>
               <label for="getID">Enter Fragment Id: </label>
               <input type="text" id="getID" name="getID">
+              <br><br>
               <button id="get">Get</button>
           </section>
-
+          <br>
+          <hr>
           <h3>Delete a Fragment</h3>
           <label for="deleteID">Enter Fragment Id: </label>
           <input type="text" id="deleteID" name="deleteID">
+          <br><br>
           <button id="delete">Delete</button>
-
+          <br><br>
+          <hr>
+          <section id="fragdisp" style="display: none">
+          <label>Fragment</label>
+          </section>
           <div id="imagePlaceholder"></div>
 
+          <div>
+            <section id="metadataSection" style="display: none">
+              <label>Metadata</label>
+              <pre id="metadata"></pre>
+            </section>
+            
+            <span id="fragment"></span>
+          </div>
     </div>   
   </body>
 </html>

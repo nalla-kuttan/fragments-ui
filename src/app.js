@@ -17,6 +17,8 @@ async function init() {
   const selectedType = document.getElementById('fragmentType');
   const selectedType2 = document.getElementById('fragmentType2');
   const imagePlace = document.getElementById('imagePlaceholder');
+  const metadataSection = document.querySelector('#metadataSection');
+  const metadataToDisplay = document.getElementById('metadata');
 
   // Wire up event handlers to deal with login and logout.
   loginBtn.onclick = () => {
@@ -79,10 +81,17 @@ async function init() {
     console.log(input);
     const getFragment  = await getFragmentById(user, input);
     if(getFragment.type.startsWith('image/')){
+      fragdisp.style.display = 'block';
       imagePlace.innerHTML = `<img src="data:${getFragment.type};base64,${getFragment.data}" />`
     } else{
+      fragdisp.style.display = 'block';
       imagePlace.innerHTML = `<pre>${getFragment.data}</pre>`
     }
+    const metadata = await getFragmentById(user, input);
+      if (metadata) {
+        metadataSection.style.display = 'block';
+        metadataToDisplay.innerHTML = JSON.stringify(metadata);
+      }
   };
 
   deleteBtn.onclick = async () => {
